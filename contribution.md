@@ -24,7 +24,7 @@ There are different ways to clone a repo; through GitHub Desktop, git bash (git 
 <h4>Step 1: Fork this repository</h4>
 
 - The objective here is to make a copy of this project and place it in your account. So go to the top right and click on the fork icon just as in the picture below.
-  ![Fork](image/fork.PNG "click on 'Fork'")
+  ![Fork](image/docs/fork.PNG "click on 'Fork'")
 
 <h4>Step 2: Clone the repository</h4>
 
@@ -36,7 +36,7 @@ There are different ways to clone a repo; through GitHub Desktop, git bash (git 
 
   - Click on _file_ and then _clone repository_
 
-  ![Clone](image/clone.png "click clone repository")
+  ![Clone](image/docs/clone.png "click clone repository")
 
   - You will see a list of all your repositories and forks on GitHub.
   - Select `<your-github-username>/simple-contribution`.
@@ -55,7 +55,7 @@ There are different ways to clone a repo; through GitHub Desktop, git bash (git 
   - Give your branch a name
   - Click `Create branch`
 
-  ![Name branch](image/branch-name.png "Name your branch")
+  ![Name branch](image/docs/branch-name.png "Name your branch")
 
   - Go ahead and name the branch whatever you want, to make it easier since you're to add your details, you can name it `your-name-information`.
 
@@ -68,7 +68,7 @@ There are different ways to clone a repo; through GitHub Desktop, git bash (git 
 - Once you click on _open with visual studio code_, the project opens up for you VS Code open the index.html file to start editing.
 - If you're using other editors, find the project folder on your computer. The `index.html` file is directly in the `simple-contribution` folder.
 
-[Open VS Code](image/vscode-open.jpeg "Open index.html in your text editor")
+[Open VS Code](image/docs/vscode-open.jpeg "Open index.html in your text editor")
 
 <h4>Step 5: Copy and edit the cardDetails.json file</h4>
 
@@ -92,13 +92,13 @@ There are different ways to clone a repo; through GitHub Desktop, git bash (git 
 - Go ahead and _commit_ by filling in the _Summary_ field (the _description_ is optional). Add a short commit message explaining what you have changed e.g. add my information and click the _Commit to main_ button.
   **P.S: Please ensure that, before committing any changes, you've thoroughly checked for any broken code and ensured it's error-free on your side.**
 
-![Commit Changes](image/commit.PNG "Commit your changes")
+![Commit Changes](image/docs/commit.PNG "Commit your changes")
 
 **Push Changes**
 
 - Now your changes are committed, the next thing to do is to _push_ your changes by clicking on the _Push_ button so as to get it in sync with your repository on GitHub. You are "pushing" the changes from your local repository to the remote repository on GitHub.
 
-![Push Changes](image/publish-branch.jpeg "Name your branch")
+![Push Changes](image/docs/publish-branch.jpeg "Name your branch")
 
 <h4>Step 7: Submit a PR(Pull Request)</h4>
 
@@ -112,7 +112,7 @@ There are different ways to clone a repo; through GitHub Desktop, git bash (git 
 
   * Now when the **Open a pull request** page opens, it should look like the one in the photo below. The original project is on the left, followed by the master branch. Your fork on the right and the branch you created
 
-  ![Open a Pull Request](image/pull-request.png "You are requesting to merge your branch from your fork into the master branch of the original project")
+  ![Open a Pull Request](image/docs/pull-request.png "You are requesting to merge your branch from your fork into the master branch of the original project")
 
   - On the pull request page, write a title and add optional information in the description. Click the `Create pull request` button.
 
@@ -133,7 +133,7 @@ cd <folder directory>
 ```
 
 - Click on the clone button and then click the copy to clipboard icon.
-  ![Copy Link](image/copy-url.png "Copy the repository url")
+  ![Copy Link](image/docs/copy-url.png "Copy the repository url")
 
 Open the git bash terminal and run the following git command
 
@@ -180,7 +180,7 @@ git push origin -u your-branch-name
 
 ### Now that you're done contributing, go back to the main account repository, click on the site link by the right side, check out other contributor's socials, and connect with them. Also, click on the _star_ button beside the _fork_ button.
 
-![Star](image/star.PNG "Click the star button")
+![Star](image/docs/star.PNG "Click the star button")
 
 # Acknowledgements🙏
 
