@@ -1,0 +1,9 @@
+body {
+    --hamburger-padding: 15px;
+    --hamburger-width: 36px;
+    --hamburger-height: 24px;
+
+    --hamburger-line-height: 2px;
+    --hamburger-border-radius: 4px;
+    --hamburger-hide-distance: calc(var(--hamburger-width) + var(--hamburger-padding));
+}
