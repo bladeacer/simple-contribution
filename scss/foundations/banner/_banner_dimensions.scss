@@ -1,0 +1,48 @@
+body{
+  --banner-box-margin: 20rem;
+  --banner-infi: 500px;
+  --banner-infi-small: 120px;
+  --banner-infi-small-span-before: 6px;
+}
+
+.banner .box {
+  display: flex;
+  height: 800px;
+  width: 1250px;
+  position: absolute;
+  margin-top: var(--banner-margin);
+  margin-left: var(--banner-margin);
+  opacity: 0.8;
+}
+
+
+.banner .box .infi {
+  position: relative;
+  height: var(--banner-infi);
+  width: var(--banner-infi);
+  margin: 0 -12.5px;
+}
+
+
+@media screen and (max-width: 760px) {
+  /* Add this inside your existing media query for smaller screens */
+  .banner .box {
+    width: 90%; /* Adjust the width of the box for smaller screens */
+
+    margin: 2rem auto;
+    margin-top: var(--banner-margin);
+    /* Center the box and add some vertical spacing */
+  }
+
+  .box .infi {
+    height: var(--banner-infi-small); /* Adjust the height of the infi for smaller screens */
+    width: var(--banner-infi-small); /* Adjust the width of the infi for smaller screens */
+    margin: 0 -3px; /* Adjust margins for spacing between elements */
+  }
+
+  .box .infi span::before {
+    top: calc(50% - 3px); /* Adjust the top position for smaller screens */
+    width: var(--banner-infi-small-span-before); /* Adjust the width of the dots for smaller screens */
+    height: var(--banner-infi-small-span-before); /* Adjust the height of the dots for smaller screens */
+  }
+}

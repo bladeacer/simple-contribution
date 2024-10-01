@@ -1,19 +1,4 @@
 body {
-  --hamburger-bg-color: transparent;
-  --hamburger-line-color: #000000;
-  --hamburger-hover-line-color: red;
-}
-
-body {
-  --hamburger-padding: 15px;
-  --hamburger-width: 36px;
-  --hamburger-height: 24px;
-  --hamburger-line-height: 2px;
-  --hamburger-border-radius: 4px;
-  --hamburger-hide-distance: calc(var(--hamburger-width) + var(--hamburger-padding));
-}
-
-body {
   --hamburger-transition-time: 0.4s;
   --hamburger-transition-function: ease;
   --hamburger-transition-opacity: 0;
@@ -21,38 +6,21 @@ body {
   --hamburger-initial-opposition: 5px;
 }
 
-body {
-  min-height: 100vh;
-  background-color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.hamburger {
-  padding: var(--hamburger-padding);
-  cursor: pointer;
-  display: inline-block;
-  overflow: hidden;
-  background-color: var(--hamburger-bg-color);
-}
-.hamburger__container {
-  width: var(--hamburger-width);
-  height: var(--hamburger-height);
-  position: relative;
-}
 .hamburger:hover .hamburger__inner {
   transform: translate(-var(--hamburger-hide-distance), 50%);
   opacity: var(--hamburger-transition-opacity);
 }
-.hamburger:hover .hamburger__inner::before, .hamburger:hover .hamburger__inner::after {
+
+.hamburger:hover .hamburger__inner::before,
+.hamburger:hover .hamburger__inner::after {
   transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
   opacity: var(--hamburger-transition-opacity);
 }
+
 .hamburger.is-active .hamburger__inner {
   display: none;
 }
+
 .hamburger__inner {
   width: 100%;
   height: var(--hamburger-height);
@@ -66,7 +34,9 @@ body {
   transform: translate(var(--hamburger-initial-opposition), -50%);
   opacity: 1;
 }
-.hamburger__inner::before, .hamburger__inner::after {
+
+.hamburger__inner::before,
+.hamburger__inner::after {
   width: 100%;
   height: var(--hamburger-height);
   background-color: var(--hamburger-line-color);
@@ -79,32 +49,41 @@ body {
   opacity: 1;
   transform: translate(var(--hamburger-initial-opposition), 0);
 }
+
 .hamburger__inner::before {
   top: -var(--hambuger-vertical-gap);
 }
+
 .hamburger__inner::after {
   top: var(--hambuger-vertical-gap);
 }
+
 .hamburger:hover .hamburger__hidden {
   opacity: 1;
   transform: translate(0, -50%);
 }
-.hamburger:hover .hamburger__hidden::before, .hamburger:hover .hamburger__hidden::after {
+
+.hamburger:hover .hamburger__hidden::before,
+.hamburger:hover .hamburger__hidden::after {
   opacity: 1;
   transform: translate(0, 0);
 }
+
 .hamburger.is-active .hamburger__hidden {
   opacity: 1;
   transform: rotate(45deg);
 }
+
 .hamburger.is-active .hamburger__hidden::before {
   transform: translate(0, var(--hambuger-vertical-gap)) rotate(90deg);
   transform-origin: center;
 }
+
 .hamburger.is-active .hamburger__hidden::after {
   transform-origin: center;
   transform: translate(0, -var(--hambuger-vertical-gap)) rotate(0);
 }
+
 .hamburger__hidden {
   opacity: 0;
   width: 100%;
@@ -119,7 +98,9 @@ body {
   top: 50%;
   transform: translate(var(--hamburger-hide-distance), -50%);
 }
-.hamburger__hidden::before, .hamburger__hidden::after {
+
+.hamburger__hidden::before,
+.hamburger__hidden::after {
   width: 100%;
   height: var(--hamburger-height);
   background-color: var(--hamburger-line-color);
@@ -132,9 +113,131 @@ body {
   content: "";
   transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
 }
+
 .hamburger__hidden::before {
   top: -var(--hamburger-vertical-gap);
 }
+
 .hamburger__hidden::after {
   top: var(--hambuger-vertical-gap);
+}
+
+
+@mixin line-props {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+}
+
+.hamburger {
+  padding: var(--hamburger-padding);
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  background-color: var(--hamburger-bg-color);
+
+  &__container {
+    width: var(--hamburger-width);
+    height: var(--hamburger-height);
+    position: relative;
+  }
+
+  &:hover &__inner {
+    transform: translate(-(var(--hamburger-hide-distance)), 50%);
+    opacity: var(--hamburger-transition-opacity);
+  }
+
+  &:hover &__inner::before,
+  &:hover &__inner::after {
+    transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
+    opacity: var(--hamburger-transition-opacity);
+  }
+
+  &.is-active &__inner {
+    display: none;
+  }
+
+  &__inner {
+    @include line-props();
+    top: 50%;
+    transform: translate(var(--hamburger-initial-opposition), -50%);
+    opacity: 1;
+
+
+    &::before,
+    &::after {
+      @include line-props();
+
+      content: "";
+      opacity: 1;
+      transform: translate(var(--hamburger-initial-opposition), 0);
+    }
+
+    &::before {
+      top: -(var(--hambuger-vertical-gap));
+    }
+
+    &::after {
+      top: var(--hambuger-vertical-gap);
+    }
+  }
+
+  &:hover &__hidden {
+    opacity: 1;
+    transform: translate(0, -50%);
+  }
+
+  &:hover &__hidden::before,
+  &:hover &__hidden::after {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  &.is-active &__hidden {
+    opacity: 1;
+    transform: rotate(45deg);
+  }
+
+  &.is-active &__hidden::before {
+    transform: translate(0, var(--hambuger-vertical-gap)) rotate(90deg);
+    transform-origin: center;
+  }
+
+  &.is-active &__hidden::after {
+    transform-origin: center;
+    transform: translate(0, -(var(--hambuger-vertical-gap))) rotate(0);
+  }
+
+  &__hidden {
+    opacity: 0;
+    @include line-props();
+
+    background-color: var(hamburger-hover-line-color);
+    top: 50%;
+    transform: translate(var(--hamburger-hide-distance), -50%);
+
+
+    &::before,
+    &::after {
+      @include line-props();
+      background-color: var(hamburger-hover-line-color);
+
+      content: "";
+      transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
+    }
+
+    &::before {
+      top: -(var(--hamburger-vertical-gap));
+    }
+
+    &::after {
+      top: var(--hambuger-vertical-gap);
+    }
+  }
+
 }

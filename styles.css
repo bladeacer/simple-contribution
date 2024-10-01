@@ -1,0 +1,387 @@
+body {
+  --hamburger-bg-color: transparent;
+  --hamburger-line-color: #000000;
+  --hamburger-hover-line-color: red;
+}
+
+body {
+  --hamburger-padding: 15px;
+  --hamburger-width: 36px;
+  --hamburger-height: 24px;
+  --hamburger-line-height: 2px;
+  --hamburger-border-radius: 4px;
+  --hamburger-hide-distance: calc(var(--hamburger-width) + var(--hamburger-padding));
+}
+
+.hamburger {
+  padding: var(--hamburger-padding);
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  background-color: var(--hamburger-bg-color);
+}
+
+.hamburger__container {
+  width: var(--hamburger-width);
+  height: var(--hamburger-height);
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 15px;
+}
+
+html::-webkit-scrollbar {
+  width: 1rem;
+}
+
+html::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgba(10, 3, 50, 0.227);
+  border-radius: 5rem;
+}
+
+body {
+  --banner-box-shadow: #15b5ff50;
+  --banner-bg: #ffffff;
+}
+
+body {
+  --banner-box-margin: 20rem;
+  --banner-infi: 500px;
+  --banner-infi-small: 120px;
+  --banner-infi-small-span-before: 6px;
+}
+
+.banner .box {
+  display: flex;
+  height: 800px;
+  width: 1250px;
+  position: absolute;
+  margin-top: var(--banner-margin);
+  margin-left: var(--banner-margin);
+  opacity: 0.8;
+}
+
+.banner .box .infi {
+  position: relative;
+  height: var(--banner-infi);
+  width: var(--banner-infi);
+  margin: 0 -12.5px;
+}
+
+@media screen and (max-width: 760px) {
+  /* Add this inside your existing media query for smaller screens */
+  .banner .box {
+    width: 90%; /* Adjust the width of the box for smaller screens */
+    margin: 2rem auto;
+    margin-top: var(--banner-margin);
+    /* Center the box and add some vertical spacing */
+  }
+  .box .infi {
+    height: var(--banner-infi-small); /* Adjust the height of the infi for smaller screens */
+    width: var(--banner-infi-small); /* Adjust the width of the infi for smaller screens */
+    margin: 0 -3px; /* Adjust margins for spacing between elements */
+  }
+  .box .infi span::before {
+    top: calc(50% - 3px); /* Adjust the top position for smaller screens */
+    width: var(--banner-infi-small-span-before); /* Adjust the width of the dots for smaller screens */
+    height: var(--banner-infi-small-span-before); /* Adjust the height of the dots for smaller screens */
+  }
+}
+body {
+  --hamburger-transition-time: 0.4s;
+  --hamburger-transition-function: ease;
+  --hamburger-transition-opacity: 0;
+  --hamburger-vertical-gap: 13px;
+  --hamburger-initial-opposition: 5px;
+}
+
+.hamburger:hover .hamburger__inner {
+  transform: translate(-var(--hamburger-hide-distance), 50%);
+  opacity: var(--hamburger-transition-opacity);
+}
+
+.hamburger:hover .hamburger__inner::before,
+.hamburger:hover .hamburger__inner::after {
+  transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
+  opacity: var(--hamburger-transition-opacity);
+}
+
+.hamburger.is-active .hamburger__inner {
+  display: none;
+}
+
+.hamburger__inner {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  top: 50%;
+  transform: translate(var(--hamburger-initial-opposition), -50%);
+  opacity: 1;
+}
+
+.hamburger__inner::before,
+.hamburger__inner::after {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  content: "";
+  opacity: 1;
+  transform: translate(var(--hamburger-initial-opposition), 0);
+}
+
+.hamburger__inner::before {
+  top: -var(--hambuger-vertical-gap);
+}
+
+.hamburger__inner::after {
+  top: var(--hambuger-vertical-gap);
+}
+
+.hamburger:hover .hamburger__hidden {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+
+.hamburger:hover .hamburger__hidden::before,
+.hamburger:hover .hamburger__hidden::after {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.hamburger.is-active .hamburger__hidden {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+
+.hamburger.is-active .hamburger__hidden::before {
+  transform: translate(0, var(--hambuger-vertical-gap)) rotate(90deg);
+  transform-origin: center;
+}
+
+.hamburger.is-active .hamburger__hidden::after {
+  transform-origin: center;
+  transform: translate(0, -var(--hambuger-vertical-gap)) rotate(0);
+}
+
+.hamburger__hidden {
+  opacity: 0;
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  background-color: var(hamburger-hover-line-color);
+  top: 50%;
+  transform: translate(var(--hamburger-hide-distance), -50%);
+}
+
+.hamburger__hidden::before,
+.hamburger__hidden::after {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  background-color: var(hamburger-hover-line-color);
+  content: "";
+  transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
+}
+
+.hamburger__hidden::before {
+  top: -var(--hamburger-vertical-gap);
+}
+
+.hamburger__hidden::after {
+  top: var(--hambuger-vertical-gap);
+}
+
+.hamburger {
+  padding: var(--hamburger-padding);
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  background-color: var(--hamburger-bg-color);
+}
+.hamburger__container {
+  width: var(--hamburger-width);
+  height: var(--hamburger-height);
+  position: relative;
+}
+.hamburger:hover .hamburger__inner {
+  transform: translate(-var(--hamburger-hide-distance), 50%);
+  opacity: var(--hamburger-transition-opacity);
+}
+.hamburger:hover .hamburger__inner::before, .hamburger:hover .hamburger__inner::after {
+  transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
+  opacity: var(--hamburger-transition-opacity);
+}
+.hamburger.is-active .hamburger__inner {
+  display: none;
+}
+.hamburger__inner {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  top: 50%;
+  transform: translate(var(--hamburger-initial-opposition), -50%);
+  opacity: 1;
+}
+.hamburger__inner::before, .hamburger__inner::after {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  content: "";
+  opacity: 1;
+  transform: translate(var(--hamburger-initial-opposition), 0);
+}
+.hamburger__inner::before {
+  top: -var(--hambuger-vertical-gap);
+}
+.hamburger__inner::after {
+  top: var(--hambuger-vertical-gap);
+}
+.hamburger:hover .hamburger__hidden {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.hamburger:hover .hamburger__hidden::before, .hamburger:hover .hamburger__hidden::after {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.hamburger.is-active .hamburger__hidden {
+  opacity: 1;
+  transform: rotate(45deg);
+}
+.hamburger.is-active .hamburger__hidden::before {
+  transform: translate(0, var(--hambuger-vertical-gap)) rotate(90deg);
+  transform-origin: center;
+}
+.hamburger.is-active .hamburger__hidden::after {
+  transform-origin: center;
+  transform: translate(0, -var(--hambuger-vertical-gap)) rotate(0);
+}
+.hamburger__hidden {
+  opacity: 0;
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  background-color: var(hamburger-hover-line-color);
+  top: 50%;
+  transform: translate(var(--hamburger-hide-distance), -50%);
+}
+.hamburger__hidden::before, .hamburger__hidden::after {
+  width: 100%;
+  height: var(--hamburger-height);
+  background-color: var(--hamburger-line-color);
+  border-radius: var(--hamburger-border-radius);
+  position: absolute;
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: var(--hamburger-transition-time);
+  background-color: var(hamburger-hover-line-color);
+  content: "";
+  transform: translate(calc(2 * var(--hamburger-hide-distance)), 0);
+}
+.hamburger__hidden::before {
+  top: -var(--hamburger-vertical-gap);
+}
+.hamburger__hidden::after {
+  top: var(--hambuger-vertical-gap);
+}
+
+.banner {
+  animation: animatecolor 8s linear infinite;
+}
+
+@keyframes animatecolor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+.banner .box .infi span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  transform: rotate(calc(18deg * var(--i)));
+}
+
+.banner .box .infi span::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - 12.5px);
+  width: 25px;
+  height: 25px;
+  background-color: var(--banner-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--banner-box-shadow), 0 0 20px var(--banner-box-shadow), 0 0 40px var(--banner-box-shadow), 0 0 60px var(--banner-box-shadow), 0 0 80px var(--banner-box-shadow), 0 0 100px var(--banner-box-shadow);
+  transform: scale(0.1);
+  animation: animate 4s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1);
+  }
+  50%, 100% {
+    transform: scale(0.1);
+  }
+}
+.banner .box .infi:nth-child(2) {
+  transform: rotate(-180deg);
+}
+
+.banner .box .infi:nth-child(2) span::before {
+  animation-delay: calc(-0.1s * var(--i));
+}

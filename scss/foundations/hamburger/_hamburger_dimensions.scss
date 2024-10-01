@@ -1,10 +1,33 @@
-// This is code is either not fully integrated, is experimental or is abandoned.
 body {
-    --hamburger-padding: 15px;
-    --hamburger-width: 36px;
-    --hamburger-height: 24px;
+  --hamburger-padding: 15px;
+  --hamburger-width: 36px;
+  --hamburger-height: 24px;
 
-    --hamburger-line-height: 2px;
-    --hamburger-border-radius: 4px;
-    --hamburger-hide-distance: calc(var(--hamburger-width) + var(--hamburger-padding));
+  --hamburger-line-height: 2px;
+  --hamburger-border-radius: 4px;
+  --hamburger-hide-distance: calc(var(--hamburger-width) + var(--hamburger-padding));
+}
+
+.hamburger {
+  padding: var(--hamburger-padding);
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  background-color: var(--hamburger-bg-color);
+}
+
+.hamburger__container {
+  width: var(--hamburger-width);
+  height: var(--hamburger-height);
+  position: relative;
+}
+
+body {
+  min-height: 100vh;
+  // Define in base colors directory
+  // background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }

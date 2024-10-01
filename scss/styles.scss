@@ -1,7 +1,5 @@
+// Old code is old_style.css, new is styles.scss compiled to styles.css
 
-// Uncomment the line below to compile the navbar code 
-// Old code is style.css, new is styles.scss compiled to styles.css
-
-@use "./banner/banner";
 @use "./foundations/foundations";
-@use "./scrollbar/scrollbar";
+@use "./hamburger/hamburger";
+@use "./banner/banner";
