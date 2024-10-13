@@ -230,3 +230,4 @@ const attatchMobileMenuToggleFunction = () => {
 document.addEventListener("DOMContentLoaded", function () {
   attatchMobileMenuToggleFunction();
 });
+

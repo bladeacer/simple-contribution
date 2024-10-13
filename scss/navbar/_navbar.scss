@@ -1,0 +1,134 @@
+/* navbar section styling */
+.navbar {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 6;
+}
+
+// Possibly typo in class name?
+.navbar-innner-parent {
+  position: relative;
+  width: 100%;
+  height: 5rem;
+  padding: 2rem;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  background: var(--body-bg);
+  border-bottom: 1px solid var(--navbar-inner-parent);
+}
+
+.navbar-link-list {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+#navbar-link-list-container {
+  width: 100%;
+  display: flex;
+  padding: 0px 40px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar-link-list-container > div {
+  margin: 0px 12px;
+}
+
+@keyframes color-change {
+  0% {
+    color: rgb(10, 3, 50);
+  }
+  25% {
+    color: rgb(255, 0, 0);
+  }
+  50% {
+    color: rgb(0, 255, 0);
+  }
+  75% {
+    color: rgb(0, 0, 255);
+  }
+  100% {
+    color: rgb(255, 165, 0);
+  }
+}
+
+.navbar a {
+  color: rgb(10, 3, 50);
+  position: relative;
+  transition: color 0.3s ease;
+}
+.navbar a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: rgb(10, 3, 50);
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+  animation: color-change 1s infinite alternate;
+}
+
+.navbar a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar h3 {
+  font-size: 50px;
+  font-weight: 400;
+  font-family: "The Nautigal", cursive;
+}
+
+.navbar-logo-1 {
+  width: 250px;
+  margin-right: 20px;
+}
+
+#navbar-menu-icon-1 {
+  width: 35px;
+  display: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+#navbar-menu-icon-1:hover {
+  transform: rotate(90deg);
+}
+
+.navbar-mobile-icon {
+  display: none;
+  width: fit-content;
+  color: var(--body-bg);
+  cursor: pointer;
+  font-size: 17px;
+  margin-right: 10px;
+  border-radius: 50%;
+  justify-content: flex-end;
+  background: rgb(10, 3, 50);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+#navbar-social-media-container {
+  display: none;
+}
+
+.navbar {
+  transition: background-color 0.2s;
+  /* Force Hardware Acceleration in WebKit */
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+

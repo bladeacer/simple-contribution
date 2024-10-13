@@ -46,3 +46,35 @@ body{
     height: var(--banner-infi-small-span-before); /* Adjust the height of the dots for smaller screens */
   }
 }
+
+/*Banner section styling*/
+.banner {
+  color: #fff;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+  background: rgb(10, 3, 50);
+  position: relative;
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+.banner p {
+  line-height: 2;
+  margin-left: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-right: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.banner span {
+  display: block;
+  text-align: center;
+}
+

@@ -1,0 +1,86 @@
+/* Card section styling */
+body {
+    --card-before-border: #975fff;
+    --card-after-border: #c87cee;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 1px 3px 14px rgba(0, 0, 0, 0.088);
+  width: 325px;
+  text-align: center;
+  margin: 25px 10px;
+  padding: 10px;
+  border-radius: 25px;
+  background-color: var(--body-bg);
+  min-height: 400px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.card-details h1 {
+  font-family: "Space Mono", cursive;
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.card-details h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.card-details p {
+  font-family: "Space Mono", cursive;
+}
+
+.card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  scale: 1.05;
+  transition: 1s ease !important ;
+    // Try removing !important :)
+  background: linear-gradient(145deg, #f0f0f0, var(--body-bg));
+}
+
+.card::before,
+.card::after {
+  content: "";
+  position: relative;
+  width: 0;
+  height: 0;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  z-index: -10;
+}
+
+.card::before {
+  top: 0;
+  left: 0;
+  border-top-color: var(--card-before-border);
+  border-left-color: var(--card-before-border);
+}
+
+.card::after {
+  bottom: 0;
+  right: 0;
+  border-bottom-color: var(--card-after-border);
+  border-right-color: var(--card-after-border);
+}
+
+.card:hover::before,
+.card:hover::after {
+  width: 100%;
+  height: 100%;
+}
+

@@ -1,5 +1,8 @@
 // Old code is old_style.css, new is styles.scss compiled to styles.css
 
 @use "./foundations/foundations";
+@use "./navbar/navbar";
 @use "./hamburger/hamburger";
 @use "./banner/banner";
+@use "./button/button";
+@use "./cards/cards";
